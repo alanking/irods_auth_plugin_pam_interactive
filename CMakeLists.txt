@@ -53,6 +53,10 @@ include("${IRODS_TARGETS_PATH}")
 
 include(GNUInstallDirs)
 
+if(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+	add_compile_options($<$<COMPILE_LANGUAGE:CXX>:-fpermissive>)
+endif()
+
 if (IRODS_VERSION VERSION_LESS 4.90.0)
 	include(UseLibCXX)
 	set(IRODS_AUTHENTICATION_PLUGINS_DIRECTORY "${IRODS_PLUGINS_DIRECTORY}/auth")
