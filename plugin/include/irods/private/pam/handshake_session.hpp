@@ -108,4 +108,5 @@ inline const char * PamHandshake::Session::StateToString(const Session::State & 
   case State::Authenticated: return "authenticated";
   case State::NotAuthenticated: return "not_authenticated";
   }
+  return "error";
 }
